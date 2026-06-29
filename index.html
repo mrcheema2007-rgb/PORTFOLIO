@@ -2189,13 +2189,13 @@ function submitForm() {
    const emailPattern =
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    if (!name || !email || !message) {
-    msgEl.innerHTML = "⚠ Please fill in all fields.";
-    msgEl.style.color = "#ff6b35";
+    msg.innerHTML = "⚠ Please fill in all fields.";
+    msg.style.color = "#ff6b35";
     return;
   }
       if (!emailPattern.test(email)) {
-    msgEl.innerHTML = "⚠ Please enter a valid email address.";
-    msgEl.style.color = "#ff6b35";
+    msg.innerHTML = "⚠ Please enter a valid email address.";
+    msg.style.color = "#ff6b35";
     return;
   }
 
@@ -2211,8 +2211,8 @@ function submitForm() {
 
     .then(function ()  {
 
-      msgEl.innerHTML = "✅ Message sent successfully!";
-      msgEl.style.color = "#00d084";
+      msg.innerHTML = "✅ Message sent successfully!";
+      msg.style.color = "#00d084";
 
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
@@ -2223,8 +2223,8 @@ function submitForm() {
     .catch(function (error) {
 
       console.log(error);
-      msgEl.innerHTML = "❌ Failed to send message.";
-      msgEl.style.color = "#ff4d4f";
+      msg.innerHTML = "❌ Failed to send message.";
+      msg.style.color = "#ff4d4f";
 
     });
 
