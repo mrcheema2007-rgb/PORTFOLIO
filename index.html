@@ -512,17 +512,21 @@
 }
 
 .profile-image{
-    width:420px;
-    max-width:100%;
-    height:auto;
+    width:320px;
+    height:320px;
     border-radius:50%;
-    display:block;
+    object-fit:cover;
+    z-index:2;
 }
 
 .profile-wrapper{
+    position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
+    width:420px;
+    height:420px;
+    margin:auto;
 }
 
 /* Tablet */
@@ -545,64 +549,77 @@
 
 }
 
-/* Mobile */
-@media (max-width:768px){
 
-#hero{
-    padding:80px 20px;
+.floating-stat{
+    position:absolute;
+    width:110px;
+    padding:12px;
+    text-align:center;
+    border-radius:16px;
+    background:rgba(20,20,20,.85);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.08);
+    z-index:5;
 }
 
-.hero-name{
-    font-size:2.4rem;
+.floating-stat h3{
+    margin:0;
+    color:#00d4ff;
+    font-size:22px;
 }
 
-.hero-role{
-    font-size:1.2rem;
-}
-
-.hero-subtitle{
-    font-size:16px;
-    line-height:1.7;
-}
-
-.profile-image{
-    width:250px;
-}
-
-.hero-btns{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.hero-btns a{
-    width:100%;
-    justify-content:center;
-}
-
-.hero-scroll{
-    display:none;
-}
-
-}
-
-/* Small Phones */
-@media (max-width:480px){
-
-.hero-name{
-    font-size:2rem;
-}
-
-.profile-image{
-    width:210px;
-}
-
-.hero-tag{
+.floating-stat span{
     font-size:13px;
+    color:#ccc;
 }
 
-.hero-subtitle{
-    font-size:15px;
+/* Positions */
+
+.stat-1{
+    top:20px;
+    left:-20px;
+}
+
+.stat-2{
+    top:20px;
+    right:-20px;
+}
+
+.stat-3{
+    bottom:20px;
+    left:-20px;
+}
+
+.stat-4{
+    bottom:20px;
+    right:-20px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.profile-wrapper{
+    width:320px;
+    height:320px;
+}
+
+.profile-image{
+    width:240px;
+    height:240px;
+}
+
+.floating-stat{
+    width:85px;
+    padding:8px;
+}
+
+.floating-stat h3{
+    font-size:18px;
+}
+
+.floating-stat span{
+    font-size:11px;
 }
 
 }
@@ -1414,15 +1431,38 @@
     </div>
 
     <!-- Right -->
-    <div class="hero-right">
 
-      <div class="profile-wrapper">
-        <div class="profile-ring"></div>
-
-        <img src="profile.jpeg" alt="Muneeb Riaz" class="profile-image">
+      <div class="hero-right">
+      
+        <div class="profile-wrapper">
+      
+          <div class="profile-ring"></div>
+          <img src="profile.jpeg" alt="Muneeb Riaz" class="profile-image">
+      
+          <div class="floating-stat stat-1">
+            <h3>3+</h3>
+            <span>Years</span>
+          </div>
+      
+          <div class="floating-stat stat-2">
+            <h3>12+</h3>
+            <span>Projects</span>
+          </div>
+      
+          <div class="floating-stat stat-3">
+            <h3>10+</h3>
+            <span>Tech</span>
+          </div>
+      
+          <div class="floating-stat stat-4">
+            <h3>CUI</h3>
+            <span>COMSATS</span>
+          </div>
+      
+        </div>
+      
       </div>
 
-    </div>
 
   </div>
 
