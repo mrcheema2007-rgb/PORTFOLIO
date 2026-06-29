@@ -171,11 +171,20 @@
     0%, 100% { opacity: 0.6; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.08); }
   }
-  
-  .hero-content {
+ 
+
+  .hero-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+    position: relative;
+    z-index: 2;
+    
     position: relative; z-index: 2;
-    max-width: 760px;
-  }
+    max-width: 1300px;
+}
+
   
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -351,6 +360,97 @@
     line-height: 1.75;
     margin-bottom: 3.5rem;
   }
+
+/* LEFT */
+
+
+ .hero-left{
+    flex: 1;
+    min-width: 0;
+}
+
+/* RIGHT */
+
+
+
+.hero-right{
+    flex: 0 0 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Image Wrapper */
+
+.profile-wrapper{
+    position:relative;
+    width:420px;
+    height:420px;
+}
+
+/* Glow Ring */
+
+.profile-ring{
+    position:absolute;
+    inset:-15px;
+
+    border-radius:50%;
+
+    background:
+    conic-gradient(
+        #00f5ff,
+        #6c63ff,
+        #00f5ff
+    );
+
+    filter:blur(25px);
+
+    opacity:.45;
+
+    animation:rotateRing 8s linear infinite;
+}
+
+/* Image */
+
+.profile-image{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.08);
+
+    background:#0d1117;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        0 0 60px rgba(0,245,255,.25);
+
+    transition:.4s;
+}
+
+.profile-image:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+/* Rotation */
+
+@keyframes rotateRing{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
   
   .divider {
     width: 100%;
@@ -1101,39 +1201,74 @@
   <canvas id="heroCanvas"></canvas>
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
-  
+
   <div class="hero-content">
-    <div class="hero-tag">Available for opportunities</div>
-    <h1 class="hero-name">
-      <span class="first">Muneeb </span><span class="last">Riaz</span>
-    </h1>
-    <div class="hero-role">
-      <span id="typedText" class="typed-text"></span>
+
+    <!-- Left -->
+    <div class="hero-left">
+
+      <div class="hero-tag">Available for opportunities</div>
+
+      <h1 class="hero-name">
+        <span class="first">Muneeb </span>
+        <span class="last">Riaz</span>
+      </h1>
+
+      <div class="hero-role">
+        <span id="typedText" class="typed-text"></span>
+      </div>
+
+      <p class="hero-subtitle">
+        Building scalable web apps, APIs, and smart systems —
+        turning complex ideas into reliable, elegant software.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+          </svg>
+          View Projects
+        </a>
+
+        <a href="#contact" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          Contact Me
+        </a>
+      </div>
+
     </div>
-    <p class="hero-subtitle">
-      Building scalable web apps, APIs, and smart systems — turning complex ideas into reliable, elegant software.
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        View Projects
-      </a>
-      <a href="#contact" class="btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contact Me
-      </a>
+
+    <!-- Right -->
+    <div class="hero-right">
+
+      <div class="profile-wrapper">
+        <div class="profile-ring"></div>
+
+        <img src="profile.jpeg" alt="Muneeb Riaz" class="profile-image">
+      </div>
+
     </div>
+
   </div>
-  
+
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     Scroll to explore
   </div>
+
 </section>
 
-<div class="divider"></div>
+
 
 <!-- ABOUT -->
+
 <section id="about">
   <div class="section-label">Who I Am</div>
   <h2 class="section-title reveal">About Muneeb</h2>
@@ -1308,9 +1443,10 @@
       <div class="project-title">Doctor Hub</div>
       <div class="project-desc">A healthcare web application connecting patients with doctors — featuring appointment scheduling, doctor profiles, and a clean patient-facing interface.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-purple">Node.js</span>
-        <span class="tech-badge badge-green">HTML/CSS</span>
+        <span class="tech-badge badge-cyan">HTML5</span>
+        <span class="tech-badge badge-green">CSS3</span>
+        <span class="tech-badge badge-purple">JavaScript</span>
+        <span class="tech-badge badge-coral">Node.js</span>
       </div>
     </div>
 
@@ -1326,9 +1462,9 @@
       <div class="project-title">AdFlow Pro</div>
       <div class="project-desc">A professional marketing & advertising agency website with animated sections, service showcases, and a polished corporate identity — built for real client use.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-green">HTML/CSS</span>
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-coral">UI/UX</span>
+        <span class="tech-badge badge-green">TypeScript</span>
+        <span class="tech-badge badge-cyan">Node.js</span>
+        <span class="tech-badge badge-coral">Responsive UI</span>
       </div>
     </div>
 
@@ -1363,9 +1499,9 @@
       <div class="project-title">Weather App</div>
       <div class="project-desc">A real-time weather dashboard fetching live data from weather APIs — displaying forecasts, humidity, wind, and city-based search with a clean UI.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-green">OpenWeather API</span>
-        <span class="tech-badge badge-coral">HTML/CSS</span>
+        <span class="tech-badge badge-cyan">TypeScript</span>
+        <span class="tech-badge badge-green">OpenWeatherMap API</span>
+        <span class="tech-badge badge-coral">REST API</span>
       </div>
     </div>
 
@@ -1381,9 +1517,9 @@
       <div class="project-title">Online Store (Mini E-commerce)</div>
       <div class="project-desc">A mini e-commerce storefront with product listings, cart functionality, and order management — demonstrating full web app patterns from UI to data flow.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-green">HTML/CSS</span>
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-coral">UI/UX</span>
+        <span class="tech-badge badge-cyan">Flutter</span>
+        <span class="tech-badge badge-green">Dart</span>
+        <span class="tech-badge badge-purple">State Management</span>
       </div>
     </div>
 
@@ -1399,8 +1535,8 @@
       <div class="project-title">BMI Calculator App</div>
       <div class="project-desc">A clean, interactive BMI calculator with instant health category feedback, weight range visualization, and a smooth mobile-friendly interface.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-green">HTML/CSS</span>
+        <span class="tech-badge badge-cyan">dart</span>
+        <span class="tech-badge badge-green">Flutter</span>
       </div>
     </div>
 
@@ -1416,8 +1552,8 @@
       <div class="project-title">CGPA Calculator</div>
       <div class="project-desc">A university CGPA calculator supporting multi-semester input with grade point mapping, credit hour weighting, and cumulative GPA tracking.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-green">HTML/CSS</span>
+        <span class="tech-badge badge-cyan">dart</span>
+        <span class="tech-badge badge-green">Flutter</span>
       </div>
     </div>
 
@@ -1433,8 +1569,8 @@
       <div class="project-title">Tasbih Counter App</div>
       <div class="project-desc">A minimalist digital tasbih counter with haptic-style feedback, customizable target counts, progress tracking, and local storage persistence.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-cyan">JavaScript</span>
-        <span class="tech-badge badge-green">HTML/CSS</span>
+        <span class="tech-badge badge-cyan">Dart</span>
+        <span class="tech-badge badge-green">Flutter</span>
         <span class="tech-badge badge-purple">LocalStorage</span>
       </div>
     </div>
@@ -1449,12 +1585,11 @@
         </div>
       </div>
       <div class="project-title">Task & Notification Manager</div>
-      <div class="project-desc">An advanced task management app with smart notifications, priority queuing, deadline alerts, and a real-time dashboard — built with Node.js and TypeScript.</div>
+      <div class="project-desc">An advanced task management app with smart notifications, priority queuing, deadline alerts, and a real-time dashboard — built with Flutter.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-cyan">Node.js</span>
-        <span class="tech-badge badge-purple">TypeScript</span>
+        <span class="tech-badge badge-cyan">Dart</span>
+        <span class="tech-badge badge-purple">Flutter</span>
         <span class="tech-badge badge-coral">Notifications</span>
-        <span class="tech-badge badge-green">REST API</span>
       </div>
     </div>
 
@@ -1470,10 +1605,10 @@
       <div class="project-title">Inventory Management System</div>
       <div class="project-desc">A POS-style inventory management app with Firebase Auth, real-time data sync, stock tracking, sales reports, and multi-user role management.</div>
       <div class="tech-badges">
-        <span class="tech-badge badge-coral">Firebase</span>
-        <span class="tech-badge badge-purple">Auth</span>
-        <span class="tech-badge badge-cyan">Real-time Sync</span>
-        <span class="tech-badge badge-green">JavaScript</span>
+        <span class="tech-badge badge-coral">Flutter</span>
+        <span class="tech-badge badge-purple">Firebase</span>
+        <span class="tech-badge badge-cyan">Firebase Auth</span>
+        <span class="tech-badge badge-green">Cloud Firestore</span>
       </div>
     </div>
 
@@ -1523,10 +1658,21 @@
     
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">2024 – PRESENT</div>
+      <div class="timeline-date">2024 </div>
       <div class="timeline-title">Full Stack Engineering & Expansion</div>
       <div class="timeline-sub">React · Flutter · PHP · Laravel · Jira</div>
       <div class="timeline-desc">Expanding into React frontend development, Flutter cross-platform mobile apps, and agile workflows with Jira. Focus on shipping complete, polished products that solve real problems.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2025 – 2026</div>
+      <div class="timeline-title">Full-Stack Development & Real-World Projects</div>
+      <div class="timeline-sub">React • Flutter • Laravel • Node.js • Firebase</div>
+      <div class="timeline-desc">
+        Developed production-ready web and mobile applications, integrating REST APIs, authentication, cloud databases, and
+        responsive UI/UX. Expanded expertise in full-stack engineering by delivering scalable solutions and collaborating
+        with modern development workflows.
+      </div>
     </div>
   </div>
 </section>
@@ -1545,15 +1691,23 @@
         <div class="contact-icon-wrap">✉️</div>
         <div class="contact-info-text">
           <div class="contact-label">Email</div>
-          <div class="contact-value">muneeb@example.com</div>
+          <div class="contact-value">mrcheema2007@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://wa.me/923001614210?text=Hi%20Muneeb,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
+        target="_blank" class="contact-card">
+        <div class="contact-icon-wrap">💬</div>
+        <div class="contact-info-text">
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">Chat on WhatsApp</div>
         </div>
       </a>
       
-      <a href="tel:+92300000000" class="contact-card">
+      <a href="tel:+923001614210" class="contact-card">
         <div class="contact-icon-wrap">📞</div>
         <div class="contact-info-text">
           <div class="contact-label">Phone</div>
-          <div class="contact-value">+92 300 000 0000</div>
+          <div class="contact-value">+92 300 1614210</div>
         </div>
       </a>
       
