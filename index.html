@@ -172,7 +172,7 @@
     50% { opacity: 1; transform: scale(1.08); }
   }
  
-
+/* 
   .hero-content{
     display:flex;
     justify-content:space-between;
@@ -183,7 +183,7 @@
     
     position: relative; z-index: 2;
     max-width: 1300px;
-}
+} */
 
   
   .hero-tag {
@@ -364,34 +364,34 @@
 /* LEFT */
 
 
- .hero-left{
+ /* .hero-left{
     flex: 1;
     min-width: 0;
-}
+} */
 
 /* RIGHT */
 
 
 
-.hero-right{
+/* .hero-right{
     flex: 0 0 420px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 
 /* Image Wrapper */
-
+/* 
 .profile-wrapper{
     position:relative;
     width:420px;
     height:420px;
-}
+} */
 
 /* Glow Ring */
 
-.profile-ring{
+/* .profile-ring{
     position:absolute;
     inset:-15px;
 
@@ -409,10 +409,10 @@
     opacity:.45;
 
     animation:rotateRing 8s linear infinite;
-}
+} */
 
 /* Image */
-
+/* 
 .profile-image{
     position:relative;
 
@@ -436,6 +436,113 @@
 
 .profile-image:hover{
     transform:translateY(-10px) scale(1.03);
+} */
+
+/* Mobile */
+/* @media (max-width:768px){
+
+#hero{
+    padding:80px 20px;
+}
+
+.hero-name{
+    font-size:2.4rem;
+}
+
+.hero-role{
+    font-size:1.2rem;
+}
+
+.hero-subtitle{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.profile-image{
+    width:250px;
+}
+
+.hero-btns{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.hero-btns a{
+    width:100%;
+    justify-content:center;
+}
+
+.hero-scroll{
+    display:none;
+}
+
+} */
+
+/* Small Phones */
+/* @media (max-width:480px){
+
+.hero-name{
+    font-size:2rem;
+}
+
+.profile-image{
+    width:210px;
+}
+
+.hero-tag{
+    font-size:13px;
+}
+
+.hero-subtitle{
+    font-size:15px;
+}
+
+} */
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-left,
+.hero-right{
+    flex:1;
+}
+
+.profile-image{
+    width:420px;
+    max-width:100%;
+    height:auto;
+    border-radius:50%;
+    display:block;
+}
+
+.profile-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Tablet */
+@media (max-width:992px){
+
+.hero-content{
+    flex-direction:column-reverse;
+    text-align:center;
+    gap:40px;
+}
+
+.hero-btns{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.profile-image{
+    width:320px;
+}
+
 }
 
 /* Mobile */
@@ -499,7 +606,6 @@
 }
 
 }
-
 /* Rotation */
 
 @keyframes rotateRing{
